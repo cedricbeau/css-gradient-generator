@@ -27,6 +27,14 @@ $btn-shadow: 0 0 10px rgba(00,00,00,0.15);
   li + li {
     margin-top: $li-marginTop;
   }
+  a{
+    color: currentColor;
+    text-decoration: underline;
+    transition: opacity .4s;
+    &:hover{
+      opacity: .6;
+    }
+  }
 }
 
 .btn-consignes {

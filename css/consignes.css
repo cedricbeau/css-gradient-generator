@@ -24,6 +24,16 @@
   margin-top: 0.625em;
 }
 
+.consignes a {
+  color: currentColor;
+  text-decoration: underline;
+  transition: opacity .4s;
+}
+
+.consignes a:hover {
+  opacity: .6;
+}
+
 .btn-consignes {
   position: fixed;
   top: 400px;
