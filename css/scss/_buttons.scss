@@ -1,0 +1,89 @@
+/* ---------- Buttons ---------- */
+
+$btn-padding: .625em .875em;
+
+$btn-color: #fff;
+
+$btn-dark-bg: #333;
+$btn-dark-bg-hover: darken($btn-dark-bg, 20%);
+
+$btn-primary-bg: #2196F3;
+$btn-primary-bg-hover: darken($btn-primary-bg, 20%);
+
+$btn-light-color: #666;
+$btn-light-bg: #ddd;
+$btn-light-bg-hover: darken($btn-light-bg, 10%);
+
+$btn-danger-color: #FBE9E7;
+$btn-danger-bg: #ef5350;
+$btn-danger-bg-hover: darken($btn-danger-bg, 20%);
+
+.btn {
+  display: inline-block;
+  padding: $btn-padding;
+  line-height: 1;  
+  border: none;
+  border-radius: .25em;
+  cursor: pointer;
+  transition: background-color .4s;
+  &:focus{
+    -webkit-box-shadow: 0 0 4px rgba(00,00,00,0.35);
+            box-shadow: 0 0 4px rgba(00,00,00,0.35);
+  }
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin-right: .625em;
+    margin-top: -4px;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+  &:hover svg {
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
+}
+
+.btn-primary {
+  color: $btn-color;
+  background-color: $btn-primary-bg;
+  &:hover {
+    background-color: $btn-primary-bg-hover;
+  }
+}
+
+
+.btn-light {
+  color: $btn-light-color;
+  background-color: $btn-light-bg;
+  &:hover {
+    background-color: $btn-light-bg-hover;
+  }
+}
+
+
+.btn-dark {
+  color: $btn-color;  
+  background-color: $btn-dark-bg;
+  &:hover {
+    background-color: $btn-dark-bg-hover;
+  }
+}
+
+
+.btn-danger {
+  color: $btn-danger-color;
+  background-color: $btn-danger-bg;
+  &:hover {
+    background-color: $btn-danger-bg-hover;
+  }
+}
+
+
+
+
+

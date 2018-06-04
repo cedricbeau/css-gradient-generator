@@ -1,0 +1,31 @@
+/* ---------- Footer ---------- */
+
+$footer-margin: 5em 0 2em 0;
+$footer-fontSize: .875em;
+$footer-link-color: #aaa;
+$footer-link-color-hover: #03A9F4;
+
+footer {
+  margin: $footer-margin;
+  font-size: $footer-fontSize;
+  text-align: center;
+  a {
+    color: $footer-link-color;
+    text-decoration: none; 
+    -webkit-transition: color .4s;
+            transition: color .4s;
+    &:hover {
+      color: $footer-link-color-hover;
+    }
+  }
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    -webkit-transition: fill .4s;
+            transition: fill .4s;
+  }
+}
+

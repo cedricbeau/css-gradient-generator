@@ -1,0 +1,71 @@
+/* ---------- Collection ---------- */
+#collection,
+#myCollection {
+  margin: 1.25em auto;
+}
+
+.collection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collection-header h2 {
+  position: relative;
+  margin: 0;
+  color: #aaa;
+}
+
+.collection-header h2::before {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  display: block;
+  content: '';
+  width: 30px;
+  height: 5px;
+  background-color: currentColor;
+}
+
+@media only screen and (min-width: 768px) {
+  #collection,
+  #myCollection {
+    margin: 2em auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #collection,
+  #myCollection {
+    margin: 1.875em auto;
+  }
+}
+
+#clearMyCollection {
+  display: none;
+}
+
+/* Items */
+.collection-item {
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 0.25em;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+
+.item-color {
+  width: 100%;
+  height: 150px;
+}
+
+.color-hex,
+.color-rgb {
+  padding: 0.75em;
+  font-size: 0.875em;
+  line-height: 1.5;
+}
+
+.color-rgb {
+  display: none;
+}
+/*# sourceMappingURL=collection.css.map */

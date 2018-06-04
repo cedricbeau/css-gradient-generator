@@ -1,0 +1,80 @@
+/* ---------- Form ---------- */
+
+$form-padding-s: .625em 0;
+$form-padding-m: 1em 0;
+$white: #fff;
+$white-dark: darken($white, 10%);
+$blue: #2196F3;
+$border: 1px solid #e5e5e5;
+$border-radius: .25em;
+$input-width: 100%;
+$input-height: 40px;
+$input-padding: 0 .3125em;
+$label-width: 50%;
+$label-padding: .625em;
+
+form {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: $form-padding-s;
+  background-color: $white;
+  border-bottom: $border;
+}
+
+@media only screen and (min-width: 1024px) {
+  form {
+    padding: $form-padding-m;
+  }
+}
+
+.form-field {
+  display: flex;
+}
+
+#theRadialField {
+  display: none;
+}
+
+input[type="color"],
+select {
+  width: $input-width;
+  height: $input-height;
+  padding: $input-padding;
+  border: $border;
+}
+
+/* Radio */
+
+#theCheckField {
+  input {
+    display: none;
+  }
+  label {
+    width: $label-width;
+    padding: $label-padding;
+    text-align: center;
+    background-color: $white;
+    border: $border;
+    cursor: pointer;
+    &:nth-child(2) {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      border-right: 0;
+    }
+    &:nth-child(4) {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      border-left: 0;
+    }
+  }
+  input:checked + label {
+    color: $white;
+    background-color: $blue;
+    border-color: $blue;
+    cursor: default;
+  }
+  input:not(:checked) + label:hover {
+    background-color: $white-dark;
+  }
+}

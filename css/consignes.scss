@@ -1,0 +1,61 @@
+$height: 400px;
+$grey: #ccc;
+$dark: #141414;
+$consignes-padding: 1em;
+$li-marginTop: .625em;
+$btn-radius: .25em;
+$btn-shadow: 0 0 10px rgba(00,00,00,0.15);
+
+/* ---------- Consigne ---------- */
+.consignes {
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  left: 0;
+  transform: translateY(-$height);  
+  height: $height;
+  padding: $consignes-padding;
+  color: $grey;
+  background-color: $dark;
+  transition: transform .4s;
+  &.is-down {  
+    transform: translateY(0); 
+  }
+  h3 {
+    margin-top: 0;
+  }
+  li + li {
+    margin-top: $li-marginTop;
+  }
+}
+
+.btn-consignes {
+  position: fixed;
+  top: $height;
+  right: 0;  
+  color: currentColor;
+  background-color: $dark;
+  border-radius: 0;
+  border-bottom-left-radius: $btn-radius;
+  box-shadow: $btn-shadow;
+  transition: background-color .4s;
+  &:hover {
+    background-color: $dark;
+  }
+  svg {
+    margin-right: 0;
+    transition: transform .4s;
+  }
+  &.is-down svg {
+    transform: rotate(180deg);
+  }
+}
+
+/* ---------- Content ---------- */
+.content {
+  transition: transform .4s;
+  &.is-down {
+    transform: translateY($height);
+  }
+}
+

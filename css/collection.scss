@@ -1,0 +1,85 @@
+/* ---------- Collection ---------- */
+
+$grey: #aaa;
+$white: #fff;
+$collection-margin-s: 1.25em auto;
+$collection-margin-m: 2em auto;
+$collection-margin-l: 1.875em auto;
+$title-line-width: 30px;
+$title-line-height: 5px;
+$item-color-width: 100%;
+$item-color-height: 150px;
+$color-text-padding: .75em;
+$color-text-fontSize: .875em;
+$color-text-lineHeight: 1.5;
+$border-radius: .25em;
+$box-shadow: 0px 0px 20px rgba(00,00,00,.15);
+
+#collection,
+#myCollection {
+  margin: $collection-margin-s;  
+}
+
+.collection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    position: relative;
+    margin: 0;
+    color: $grey;
+    &::before {
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      display: block;
+      content: '';
+      width: $title-line-width;
+      height: $title-line-height;
+      background-color: currentColor;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #collection,
+  #myCollection {
+    margin: $collection-margin-m;  
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #collection,
+  #myCollection {
+    margin: $collection-margin-l;  
+  }
+}
+
+#clearMyCollection {
+  display: none;
+}
+
+/* Items */
+
+.collection-item {  
+  overflow: hidden;
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+.item-color {
+  width: $item-color-width;
+  height: $item-color-height;
+}
+
+.color-hex,
+.color-rgb {
+  padding: $color-text-padding;
+  font-size: $color-text-fontSize;
+  line-height: $color-text-lineHeight;
+}
+
+.color-rgb {
+  display: none;
+}

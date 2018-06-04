@@ -1,0 +1,28 @@
+/* ---------- Footer ---------- */
+footer {
+  margin: 5em 0 2em 0;
+  font-size: 0.875em;
+  text-align: center;
+}
+
+footer a {
+  color: #aaa;
+  text-decoration: none;
+  -webkit-transition: color .4s;
+  transition: color .4s;
+}
+
+footer a:hover {
+  color: #03A9F4;
+}
+
+footer svg {
+  display: inline-block;
+  vertical-align: middle;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  -webkit-transition: fill .4s;
+  transition: fill .4s;
+}
+/*# sourceMappingURL=footer.css.map */

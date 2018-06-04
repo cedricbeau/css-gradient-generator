@@ -1,0 +1,121 @@
+/* ---------- Base ---------- */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #212121;
+  background: #f2f2f2;
+}
+
+/* ---------- Layout ---------- */
+/* Container */
+.container {
+  width: calc(100% - 2.5em);
+  min-width: 300px;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 0.875em;
+}
+
+.form-grid {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.625em;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .grid {
+    grid-gap: 1.25em;
+  }
+  .form-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.625em 0.875em;
+  line-height: 1;
+  border: none;
+  border-radius: .25em;
+  cursor: pointer;
+  transition: background-color .4s;
+}
+
+.btn:focus {
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+}
+
+.btn svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  margin-right: .625em;
+  margin-top: -4px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.btn:hover svg {
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #2196F3;
+}
+
+.btn-primary:hover {
+  background-color: #0960a5;
+}
+
+.btn-light {
+  color: #666;
+  background-color: #ddd;
+}
+
+.btn-light:hover {
+  background-color: #c4c4c4;
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: #333;
+}
+
+.btn-dark:hover {
+  background-color: black;
+}
+
+.btn-danger {
+  color: #FBE9E7;
+  background-color: #ef5350;
+}
+
+.btn-danger:hover {
+  background-color: #c71612;
+}
+/*# sourceMappingURL=style.css.map */
