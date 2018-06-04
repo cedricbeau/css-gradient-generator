@@ -1,8 +1,16 @@
 /* ---------- Footer ---------- */
 footer {
-  margin: 5em 0 2em 0;
+  padding-top: 2em;
+  margin-top: 5em !important;
+  margin-bottom: 2em !important;
   font-size: 0.875em;
   text-align: center;
+  color: #aaa;
+  border-top: 1px solid #e5e5e5;
+}
+
+footer div + div {
+  margin-top: 1em;
 }
 
 footer a {
@@ -24,5 +32,15 @@ footer svg {
   fill: currentColor;
   -webkit-transition: fill .4s;
   transition: fill .4s;
+}
+
+@media only screen and (min-width: 768px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer div + div {
+    margin-top: 0;
+  }
 }
 /*# sourceMappingURL=footer.css.map */
