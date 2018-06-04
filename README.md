@@ -2,6 +2,7 @@
 Générateur de gradient css en ligne.
 
 **ATTENTION**
+
 Ne fonctionne ni sur Safari ni sur IE11, ces navigateurs ne prenant pas en charge [Color input type](https://caniuse.com/#feat=input-color)
 
 
