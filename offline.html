@@ -132,7 +132,7 @@
     <link rel="stylesheet" href="css/collection.css">
     <div id="collection" class="container">
       <div class="collection-header">
-        <h2>Ma collection</h2>
+        <h2>Ma collection - Offline mode</h2>
         <button type="button" id="clearMyCollection" class="btn btn-danger"><svg class="icon icon-bin"><use xlink:href="#icon-bin"></use></svg>Supprimer ma collection</button>
       </div>    
       <div id="myCollection" class="grid"></div>    
@@ -153,22 +153,6 @@
 
   </div>
   <!-- Content: End -->
-	
-	<script>
-		//This is the "Offline page" service worker
-		if ('serviceWorker' in navigator) {
-		  navigator.serviceWorker.register('sw.js', { scope: './' }).then(function(reg) {
-		    // registration worked
-		    console.log('Registration succeeded. Scope is ' + reg.scope);
-		  }).catch(function(error) {
-		    // registration failed
-		    console.log('Registration failed with ' + error);
-		  });
-		};
-	</script>
-
-	<script src="sw.js" charset="utf-8"></script>
-	<script src="manup.js" charset="utf-8"></script>
     
   <script src="js/consignes.js"></script>
   <script  src="js/app.js"></script>

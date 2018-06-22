@@ -1,0 +1,21 @@
+{"name" : "CSS Gradient Generator Online",
+    "short_name" : "CSSGGO",
+    "theme_color" : "#ffffff",
+    "background_color" : "#ffffff",
+    "display" : "standalone",
+    "start_url" : "https://lab.cedricbeau.pro/Gradient/",
+    "lang" : "French",
+    "orientation" : "portrait-primary",
+    "description" : "Générateur en ligne de gradient css",
+    "scope" : "https://lab.cedricbeau.pro/Gradient/",
+    "icons" : [
+        {
+            "src": "https://lab.cedricbeau.pro/Gradient/favicon/android-chrome-192x192.png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "https://lab.cedricbeau.pro/Gradient/favicon/android-chrome-512x512.png",
+            "sizes": "512x512"
+        }
+    ]
+}
