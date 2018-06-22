@@ -18,5 +18,5 @@ Ne fonctionne ni sur Safari ni sur IE11, ces navigateurs ne prenant pas en charg
 
 **22/06/2018**
 
-*Ajout des favicons
-*Ajout des services workers
+* Ajout des favicons
+* Ajout des services workers
