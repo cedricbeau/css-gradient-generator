@@ -14,7 +14,7 @@ Ne fonctionne ni sur Safari ni sur IE11, ces navigateurs ne prenant pas en charg
 
 ![Capture d'écran de TodoList]( https://github.com/cedricbeau/css-gradient-generator/blob/master/screen-gradient-02.png "Capture d'écran de TodoList")
 
-## Mises àjours
+## Mises à jours
 
 **22/06/2018**
 
