@@ -15,6 +15,9 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
+  <script src="js/react.production.min.js" crossorigin></script>
+  <script src="js/react-dom.production.min.js" crossorigin></script>
+
   <link rel="manifest" href="manifest.json"></link>
 
   <!-- Critical Styles -->
@@ -25,21 +28,7 @@
 </head>
 <body>
   <link rel="stylesheet" href="css/consignes.min.css">
-  <div class="consignes">
-    <h3>Consignes</h3>
-    <ol>
-      <li>Choisir le type linear ou radial</li>
-      <li>Choisir la direction</li>
-      <li>Choisir la première couleur</li>
-      <li>Choisir la seconde couleur</li>
-      <li>Le rendu visuel apparait, ainsi que la ligne de CSS correspondant.</li>
-      <li>Il est possible d'ajouter le gradient à votre collection, laquelle est stockée dans le navigateur.</li>
-      <li>Pour supprimer la collection, il suffit d'appuyer sur le bouton 'Supprimer ma collection'</li>
-    </ol>
-    <button type="button" class="btn btn-consignes">
-      <span class="icon-arrow-down2"></span>
-    </button>
-  </div>
+  <div id="instructions"></div>
   <!-- Consignes: End -->
   <div class="content">
     <link rel="stylesheet" href="css/form.min.css">
@@ -133,6 +122,7 @@
 
   <script src="js/consignes.js"></script>
   <script  src="js/app.js"></script>
+  <script src="reactapp.js"></script>
 
 </body>
 </html>

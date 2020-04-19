@@ -12,25 +12,30 @@ $btn-shadow: 0 0 10px rgba(00,00,00,0.15);
   z-index: 1000;
   right: 0;
   left: 0;
-  transform: translateY(-$height);  
+  transform: translateY(-$height);
   height: $height;
   padding: $consignes-padding;
   color: $grey;
   background-color: $dark;
   transition: transform .4s;
-  &.is-down {  
-    transform: translateY(0); 
+
+  &.is-down {
+    transform: translateY(0);
   }
+
   h3 {
     margin-top: 0;
   }
+
   li + li {
     margin-top: $li-marginTop;
   }
+
   a{
     color: currentColor;
     text-decoration: underline;
     transition: opacity .4s;
+
     &:hover{
       opacity: .6;
     }
@@ -58,17 +63,4 @@ $btn-shadow: 0 0 10px rgba(00,00,00,0.15);
     margin-right: 0;
     transition: transform .4s;
   }
-
-  &.is-down [class*="icon-"] {
-    transform: scaleY(-1);
-  }
 }
-
-/* ---------- Content ---------- */
-.content {
-  transition: transform .4s;
-  &.is-down {
-    transform: translateY($height);
-  }
-}
-
