@@ -13,9 +13,9 @@ let addToCollection = document.getElementById('addToCollection')
 let clearMyCollection = document.getElementById('clearMyCollection')
 
 // Affiche dynamiquement le resultat
-function changeValue() {  
+function changeValue() {
   
-  let hexValue  
+  let hexValue
   
   for(let i=0;i<theValues.length;i++){
 
@@ -34,13 +34,11 @@ function changeValue() {
       hexValue = 'radial-gradient('+radialDirection+', '+couleur1+', '+couleur2+')'
       theGradientResult.style.backgroundImage = hexValue
       textResult.innerText = hexValue
-    }    
-
+    }
   }
 
   addToCollection.style.opacity = 1
-  addToCollection.style.pointerEvents = 'all'  
-
+  addToCollection.style.pointerEvents = 'all'
 }
 
 //Ecoute si Linear ou Radial
@@ -57,17 +55,15 @@ function checkTypeGradient() {
       //Linear
       if(checkRadio[i].id === 'theLinear') {
         theRadialField.style.display = 'none'
-        theLinearField.style.display = 'flex'        
+        theLinearField.style.display = 'flex'
       }
       //Radial
       if(checkRadio[i].id === 'theRadial') {
         theLinearField.style.display = 'none'
-        theRadialField.style.display = 'flex'        
+        theRadialField.style.display = 'flex'
       }
-
     })
   }
-
 }
 
 // Effet sur le bouton 'Ajouter à ma collection'
@@ -88,7 +84,7 @@ function validate(event){
 gradientColor()
 function gradientColor(){
   
-  let rgbValue = window.getComputedStyle(theGradientResult, null).getPropertyValue('background-image')  
+  let rgbValue = window.getComputedStyle(theGradientResult, null).getPropertyValue('background-image')
     
   // Form
   addToCollection.addEventListener('click', function(e){
@@ -110,19 +106,17 @@ function gradientColor(){
       if(theRadial.checked === true) {
         let hexValue = 'radial-gradient('+radialDirection+', '+couleur1+', '+couleur2+')'
         theGradientResult.style.backgroundImage = hexValue
-      }    
-
+      }
     }
 
     storeFormValue()
     createItem()
-    
   })
 
   // Store Form Values
   function storeFormValue() {
 
-    //RGV
+    //RGB
     let rgbValue = window.getComputedStyle(theGradientResult, null).getPropertyValue('background-image')
     window.localStorage.myRgbColor = rgbValue
 
@@ -138,11 +132,9 @@ function gradientColor(){
       }
       
       if(theRadial.checked === true) {
-        window.localStorage.myHexColor = 'radial-gradient('+radialDirection+', '+couleur1+', '+couleur2+')'        
-      }   
-
+        window.localStorage.myHexColor = 'radial-gradient('+radialDirection+', '+couleur1+', '+couleur2+')'
+      }
     }
-
   }
 
   // Create item
@@ -156,7 +148,7 @@ function gradientColor(){
     newItem.addEventListener('click', function(){
       this.classList.toggle('is-focused')
     })
-    
+
     let newItemColor = document.createElement('div')
     newItemColor.classList = 'item-color'
     newItemColor.style.backgroundImage = storedHex
@@ -169,7 +161,7 @@ function gradientColor(){
     newItemTextRgb.classList = 'color-rgb'
     newItemTextRgb.innerText = storedRgb
 
-    newItem.appendChild(newItemColor)    
+    newItem.appendChild(newItemColor)
     newItem.appendChild(newItemTextHex)
     newItem.appendChild(newItemTextRgb)
     myCollection.appendChild(newItem)
@@ -177,7 +169,6 @@ function gradientColor(){
     clearMyCollection.style.display = 'inline-block'
 
     storeCollection()
-    
   }
 
   function storeCollection(){
@@ -203,13 +194,13 @@ function gradientColor(){
     textResult.innerText = ''
 
     addToCollection.style.opacity = 0
-    addToCollection.style.pointerEvents = 'none'     
+    addToCollection.style.pointerEvents = 'none'
 
     localStorage.clear()
     myCollection.innerHTML = ''
-    clearMyCollection.style.display = 'none'  
+    clearMyCollection.style.display = 'none'
   }
 
-  clearMyCollection.addEventListener('click', clearCollection, false)  
+  clearMyCollection.addEventListener('click', clearCollection, false)
 }
 

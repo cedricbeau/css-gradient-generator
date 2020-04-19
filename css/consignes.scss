@@ -40,22 +40,27 @@ $btn-shadow: 0 0 10px rgba(00,00,00,0.15);
 .btn-consignes {
   position: fixed;
   top: $height;
-  right: 0;  
+  right: 0;
+  display: flex;
+  align-items: center;
   color: currentColor;
   background-color: $dark;
   border-radius: 0;
   border-bottom-left-radius: $btn-radius;
   box-shadow: $btn-shadow;
   transition: background-color .4s;
+
   &:hover {
     background-color: $dark;
   }
-  svg {
+  
+  [class*="icon-"] {
     margin-right: 0;
     transition: transform .4s;
   }
-  &.is-down svg {
-    transform: rotate(180deg);
+
+  &.is-down [class*="icon-"] {
+    transform: scaleY(-1);
   }
 }
 

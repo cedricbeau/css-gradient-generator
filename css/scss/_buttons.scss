@@ -26,11 +26,13 @@ $btn-danger-bg-hover: darken($btn-danger-bg, 20%);
   border-radius: .25em;
   cursor: pointer;
   transition: background-color .4s;
+
   &:focus{
     -webkit-box-shadow: 0 0 4px rgba(00,00,00,0.35);
             box-shadow: 0 0 4px rgba(00,00,00,0.35);
   }
-  svg {
+
+  [class*="icon-"] {
     display: inline-block;
     vertical-align: middle;
     width: 1em;
@@ -41,43 +43,44 @@ $btn-danger-bg-hover: darken($btn-danger-bg, 20%);
     stroke: currentColor;
     fill: currentColor;
   }
-  &:hover svg {
+
+  &:hover [class*="icon-"] {
     stroke: currentColor;
     fill: currentColor;
   }
-
 }
 
 .btn-primary {
   color: $btn-color;
   background-color: $btn-primary-bg;
+
   &:hover {
     background-color: $btn-primary-bg-hover;
   }
 }
 
-
 .btn-light {
   color: $btn-light-color;
   background-color: $btn-light-bg;
+
   &:hover {
     background-color: $btn-light-bg-hover;
   }
 }
 
-
 .btn-dark {
   color: $btn-color;  
   background-color: $btn-dark-bg;
+
   &:hover {
     background-color: $btn-dark-bg-hover;
   }
 }
 
-
 .btn-danger {
   color: $btn-danger-color;
   background-color: $btn-danger-bg;
+
   &:hover {
     background-color: $btn-danger-bg-hover;
   }

@@ -24,10 +24,12 @@ $box-shadow: 0px 0px 20px rgba(00,00,00,.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   h2 {
     position: relative;
     margin: 0;
     color: $grey;
+
     &::before {
       position: absolute;
       left: 0;
@@ -61,7 +63,7 @@ $box-shadow: 0px 0px 20px rgba(00,00,00,.15);
 
 /* Items */
 
-.collection-item {  
+.collection-item {
   overflow: hidden;
   background-color: $white;
   border-radius: $border-radius;

@@ -5,6 +5,7 @@ $footer-marginBottom: 2em!important;
 $footer-fontSize: .875em;
 $footer-color: #aaa;
 $footer-link-color-hover: #03A9F4;
+
 footer { 
   padding-top: 2em;  
   margin-top: $footer-marginTop;
@@ -13,28 +14,29 @@ footer {
   text-align: center;
   color: $footer-color;
   border-top: 1px solid #e5e5e5;
+
   div + div {
     margin-top: 1em;
   }
+
   a {
     color: $footer-color;
     text-decoration: none; 
     -webkit-transition: color .4s;
             transition: color .4s;
+
     &:hover {
       color: $footer-link-color-hover;
     }
   }
-  svg {
-    display: inline-block;
-    vertical-align: middle;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-    -webkit-transition: fill .4s;
-            transition: fill .4s;
-  }
 }
+
+footer [class^="icon-"],
+footer [class*=" icon-"] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 @media only screen and (min-width: 768px) {
   footer {
     display: flex;
