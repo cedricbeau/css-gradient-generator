@@ -12,7 +12,7 @@ Ne fonctionne ni sur Safari ni sur IE11, ces navigateurs ne prenant pas en charg
 
 ![Capture d'écran de CSS Gradient Generator Online]( https://github.com/cedricbeau/css-gradient-generator/blob/master/screen-gradient-01.png "Capture d'écran de TodoList")
 
-![Capture d'écran de TodoList]( https://github.com/cedricbeau/css-gradient-generator/blob/master/screen-gradient-02.png "Capture d'écran de CSS Gradient Generator Online")
+![Capture d'écran de TodoList]( https://github.com/cedricbeau/css-gradient-generator/blob/master/screen-gradient-02.png "Capture d'écran de CSS Gradient Generator Onlin")
 
 ## Mises à jours
 
