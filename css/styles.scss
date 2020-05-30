@@ -1,0 +1,203 @@
+/* ---------- Base ---------- */
+
+*,*:before,*:after{
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?cm6b5o');
+  src:  url('../fonts/icomoon.eot?cm6b5o#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?cm6b5o') format('truetype'),
+    url('../fonts/icomoon.woff?cm6b5o') format('woff'),
+    url('../fonts/icomoon.svg?cm6b5o#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-heart:before {
+  content: "\e9da";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+.icon-arrow-up2:before {
+  content: "\ea3a";
+}
+.icon-arrow-down2:before {
+  content: "\ea3e";
+}
+.icon-embed2:before {
+  content: "\ea80";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+
+body {
+  margin:0;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color:#212121;
+  background: #f2f2f2;
+}
+
+/* ---------- Layout ---------- */
+
+$container-minWidth: 300px;
+$container-maxWidth: 1260px;
+
+$grid-gap-s: .625em;
+$grid-gap-m: .875em;
+$grid-gap-l: 1.25em;
+
+$grid-item-minWidth: 300px;
+
+
+/* Container */
+.container {
+  width: calc(100% - 2.5em);
+  min-width: $container-minWidth;
+  max-width: $container-maxWidth;
+  margin: 0 auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($grid-item-minWidth, 1fr));
+  grid-template-rows: auto;
+  grid-gap: $grid-gap-m;
+}
+
+.form-grid {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $grid-gap-s;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .grid {
+    grid-gap: $grid-gap-l;
+  }
+  .form-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Buttons ---------- */
+
+$btn-padding: .625em .875em;
+
+$btn-color: #fff;
+
+$btn-dark-bg: #333;
+$btn-dark-bg-hover: darken($btn-dark-bg, 20%);
+
+$btn-primary-bg: #2196F3;
+$btn-primary-bg-hover: darken($btn-primary-bg, 20%);
+
+$btn-light-color: #666;
+$btn-light-bg: #ddd;
+$btn-light-bg-hover: darken($btn-light-bg, 10%);
+
+$btn-danger-color: #FBE9E7;
+$btn-danger-bg: #ef5350;
+$btn-danger-bg-hover: darken($btn-danger-bg, 20%);
+
+.btn {
+  display: inline-block;
+  padding: $btn-padding;
+  line-height: 1;
+  border: none;
+  border-radius: .25em;
+  cursor: pointer;
+  transition: background-color .4s;
+
+  &:focus{
+    -webkit-box-shadow: 0 0 4px rgba(00,00,00,0.35);
+            box-shadow: 0 0 4px rgba(00,00,00,0.35);
+  }
+
+  [class*="icon-"] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin-right: .625em;
+    margin-top: -4px;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
+  &:hover [class*="icon-"] {
+    stroke: currentColor;
+    fill: currentColor;
+  }
+}
+
+.btn-primary {
+  color: $btn-color;
+  background-color: $btn-primary-bg;
+
+  &:hover {
+    background-color: $btn-primary-bg-hover;
+  }
+}
+
+.btn-light {
+  color: $btn-light-color;
+  background-color: $btn-light-bg;
+
+  &:hover {
+    background-color: $btn-light-bg-hover;
+  }
+}
+
+.btn-dark {
+  color: $btn-color;
+  background-color: $btn-dark-bg;
+
+  &:hover {
+    background-color: $btn-dark-bg-hover;
+  }
+}
+
+.btn-danger {
+  color: $btn-danger-color;
+  background-color: $btn-danger-bg;
+
+  &:hover {
+    background-color: $btn-danger-bg-hover;
+  }
+}
