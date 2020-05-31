@@ -13,18 +13,18 @@ var gradientTool = {
 
   init: function() {
 
-    let self = this
-    this._getCollection()
+    let self = this;
+
+    this._getCollection();
 
     // Add
     this.addToCollection.addEventListener('click', function(){
-      self._addCollection()
-
+      self._addCollection();
     })
 
     // Clear
     this.clearMyCollection.addEventListener('click', function(){
-      self._clearCollection()
+      self._clearCollection();
     })
   },
 
@@ -33,19 +33,19 @@ var gradientTool = {
    */
   _checkTypeGradient: function (event) {
 
-    let self = event.target
-    let theLinearField = document.getElementById('theLinearField')
-    let theRadialField = document.getElementById('theRadialField')
+    let self = event.target,
+        theLinearField = document.getElementById('theLinearField'),
+        theRadialField = document.getElementById('theRadialField');
 
     //Linear
     if(self.id === 'theLinear') {
-      theRadialField.style.display = 'none'
-      theLinearField.style.display = 'flex'
+      theRadialField.style.display = 'none';
+      theLinearField.style.display = 'flex';
     }
     //Radial
     if(self.id === 'theRadial') {
-      theLinearField.style.display = 'none'
-      theRadialField.style.display = 'flex'
+      theLinearField.style.display = 'none';
+      theRadialField.style.display = 'flex';
     }
 
   },
@@ -58,23 +58,23 @@ var gradientTool = {
 
     for(let i=0;i<this.theValues.length;i++){
 
-      let linearDirection = this.theValues[0].value
-      let radialDirection = this.theValues[1].value
-      let couleur1 = this.theValues[2].value
-      let couleur2 = this.theValues[3].value
+      let linearDirection = this.theValues[0].value,
+          radialDirection = this.theValues[1].value,
+          couleur1 = this.theValues[2].value,
+          couleur2 = this.theValues[3].value;
 
       ///Linear
       if(this.theLinear.checked === true) {
-        newValue = 'linear-gradient('+linearDirection+', '+couleur1+', '+couleur2+')'
+        newValue = 'linear-gradient('+linearDirection+', '+couleur1+', '+couleur2+')';
       }
 
       ///Radial
       if(this.theRadial.checked === true) {
-        newValue = 'radial-gradient('+radialDirection+', '+couleur1+', '+couleur2+')'
+        newValue = 'radial-gradient('+radialDirection+', '+couleur1+', '+couleur2+')';
       }
     }
 
-    return newValue
+    return newValue;
   },
 
   /**
@@ -86,8 +86,8 @@ var gradientTool = {
 
     this.theGradientResult.style.backgroundImage = this._loopValues(hexValue);
     this.textResult.innerText = this._loopValues(hexValue);
-    this.addToCollection.style.opacity = 1
-    this.addToCollection.style.pointerEvents = 'all'
+    this.addToCollection.style.opacity = 1;
+    this.addToCollection.style.pointerEvents = 'all';
   },
 
   /**
@@ -96,20 +96,18 @@ var gradientTool = {
    */
   _validate: function (event){
 
-    var _this = event.target
-    var self = this
+    let _this = event.target,
+        self = this;
 
-    _this.innerHTML = '<span class="icon-checkmark"></span>Ajouté !'
-    _this.style.color = '#fff'
-    _this.style.backgroundColor = '#4CAF50'
+    _this.innerHTML = '<span class="icon-checkmark"></span>Ajouté !';
+    _this.style.color = '#fff';
+    _this.style.backgroundColor = '#4CAF50';
 
     window.setTimeout(function(){
-      _this.innerHTML = '<span class="icon-plus"></span>Ajouter à ma collection'
-      _this.style.color = '#666'
-      _this.style.backgroundColor = '#ddd'
-      _this.style.opacity = 0
-      _this.style.pointerEvents = 'none'
-      self.textResult.innerText = ''
+      _this.innerHTML = '<span class="icon-plus"></span>Ajouter à ma collection';
+      _this.style.opacity = 0;
+      _this.style.pointerEvents = 'none';
+      self.textResult.innerText = '';
     }, 2000)
   },
 
@@ -118,11 +116,11 @@ var gradientTool = {
    */
   _addCollection: function() {
 
-    let hexValue
+    let hexValue;
 
     this.theGradientResult.style.backgroundImage = this._loopValues(hexValue);
-    this._storeFormValue()
-    this._createItem()
+    this._storeFormValue();
+    this._createItem();
   },
 
 
@@ -132,22 +130,22 @@ var gradientTool = {
   _storeFormValue: function () {
 
     //RGB
-    let rgbValue = window.getComputedStyle(this.theGradientResult, null).getPropertyValue('background-image')
-    window.localStorage.myRgbColor = rgbValue
+    let rgbValue = window.getComputedStyle(this.theGradientResult, null).getPropertyValue('background-image');
+    window.localStorage.myRgbColor = rgbValue;
 
     for(let i=0;i<this.theValues.length;i++){
 
-      let linearDirection = this.theValues[0].value
-      let radialDirection = this.theValues[1].value
-      let couleur1 = this.theValues[2].value
-      let couleur2 = this.theValues[3].value
+      let linearDirection = this.theValues[0].value,
+          radialDirection = this.theValues[1].value,
+          couleur1 = this.theValues[2].value,
+          couleur2 = this.theValues[3].value;
 
       if(this.theLinear.checked === true) {
-        window.localStorage.myHexColor = 'linear-gradient('+linearDirection+', '+couleur1+', '+couleur2+')'
+        window.localStorage.myHexColor = 'linear-gradient('+linearDirection+', '+couleur1+', '+couleur2+')';
       }
 
       if(this.theRadial.checked === true) {
-        window.localStorage.myHexColor = 'radial-gradient('+radialDirection+', '+couleur1+', '+couleur2+')'
+        window.localStorage.myHexColor = 'radial-gradient('+radialDirection+', '+couleur1+', '+couleur2+')';
       }
     }
   },
@@ -159,10 +157,9 @@ var gradientTool = {
    */
   _createElement: function(el, elClass) {
 
-    newElement = document.createElement(el)
-    newElement.classList = elClass
-
-    return newElement
+    newElement = document.createElement(el);
+    newElement.classList = elClass;
+    return newElement;
   },
 
   /**
@@ -170,50 +167,47 @@ var gradientTool = {
    */
   _createItem: function (){
 
-    let storedHex = window.localStorage.myHexColor
-    let storedRgb = window.localStorage.myRgbColor
+    let storedHex = window.localStorage.myHexColor,
+        storedRgb = window.localStorage.myRgbColor;
 
-    let newItem = this._createElement('div', 'collection-item')
+    let newItem = this._createElement('div', 'collection-item');
 
-    let newItemColor = this._createElement('div', 'item-color')
-    newItemColor.style.backgroundImage = storedHex
+    let newItemColor = this._createElement('div', 'item-color');
+    newItemColor.style.backgroundImage = storedHex;
 
-    let newItemTextHex =  this._createElement('div', 'color-hex')
-    newItemTextHex.innerText = storedHex
+    let newItemTextHex =  this._createElement('div', 'color-hex');
+    newItemTextHex.innerText = storedHex;
 
-    let newItemTextRgb =this._createElement('div', 'color-rgb')
-    newItemTextRgb.innerText = storedRgb
+    let newItemTextRgb =this._createElement('div', 'color-rgb');
+    newItemTextRgb.innerText = storedRgb;
 
-    newItem.appendChild(newItemColor)
-    newItem.appendChild(newItemTextHex)
-    newItem.appendChild(newItemTextRgb)
+    newItem.appendChild(newItemColor);
+    newItem.appendChild(newItemTextHex);
+    newItem.appendChild(newItemTextRgb);
 
-    this.myCollection.appendChild(newItem)
-
-    this.clearMyCollection.style.display = 'flex'
-
-    this._storeCollection()
+    this.myCollection.appendChild(newItem);
+    this.clearMyCollection.style.display = 'flex';
+    this._storeCollection();
   },
 
   /**
    * Store collection
    */
   _storeCollection: function (){
-    window.localStorage.myCollection = myCollection.innerHTML
+    window.localStorage.myCollection = myCollection.innerHTML;
   },
-
 
   /**
    * Get collection
    */
   _getCollection: function (){
-    let storedCollection = window.localStorage.myCollection
+    let storedCollection = window.localStorage.myCollection;
     if(!storedCollection){
-      this.clearMyCollection.style.display = 'none'
+      this.clearMyCollection.style.display = 'none';
       return
     } else {
-      this.myCollection.innerHTML = storedCollection
-      this.clearMyCollection.style.display = 'flex'
+      this.myCollection.innerHTML = storedCollection;
+      this.clearMyCollection.style.display = 'flex';
     }
   },
 
@@ -222,17 +216,17 @@ var gradientTool = {
    */
   _clearCollection: function () {
 
-    var self = this
+    var self = this;
 
-    self.theGradientResult.style.backgroundColor = '#333'
-    self.textResult.innerText = ''
+    self.theGradientResult.style.backgroundColor = '#333';
+    self.textResult.innerText = '';
 
-    self.addToCollection.style.opacity = 0
-    self.addToCollection.style.pointerEvents = 'none'
+    self.addToCollection.style.opacity = 0;
+    self.addToCollection.style.pointerEvents = 'none';
 
-    localStorage.clear()
-    self.myCollection.innerHTML = ''
-    self.clearMyCollection.style.display = 'none'
+    localStorage.clear();
+    self.myCollection.innerHTML = '';
+    self.clearMyCollection.style.display = 'none';
   }
 }
 
