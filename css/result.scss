@@ -24,6 +24,7 @@ $border-radius: .25em;
 
 .text-result {
   min-width: $text-resultat-minWidth;
+  min-height: 40px;
   padding: $text-resultat-padding;
   color: $white;
   background-color: $dark;
@@ -37,9 +38,9 @@ $border-radius: .25em;
 
 @media only screen and (min-width: 768px) {
   .info-result-inner {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .add-to-container {
     margin-top: 0;
@@ -48,6 +49,8 @@ $border-radius: .25em;
 }
 
 #addToCollection {
-  opacity: .5;
+  width: 100%;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity .3s
 }

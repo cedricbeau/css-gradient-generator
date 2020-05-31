@@ -107,7 +107,7 @@ var gradientTool = {
       _this.innerHTML = '<span class="icon-plus"></span>Ajouter à ma collection'
       _this.style.color = '#666'
       _this.style.backgroundColor = '#ddd'
-      _this.style.opacity = .5
+      _this.style.opacity = 0
       _this.style.pointerEvents = 'none'
       self.textResult.innerText = ''
     }, 2000)
