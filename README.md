@@ -16,6 +16,10 @@ Ne fonctionne ni sur Safari ni sur IE11, ces navigateurs ne prenant pas en charg
 
 ## Mises à jours
 
+**31/05/2020**
+
+* Detection CSS de IE
+
 **30/05/2020**
 
 * Suppression des instructions

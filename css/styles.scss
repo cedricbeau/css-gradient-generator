@@ -1,3 +1,10 @@
+// Mixin IE
+@mixin target-ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
 /* ---------- Base ---------- */
 
 *,*:before,*:after{
@@ -77,6 +84,23 @@ $grid-gap-l: 1.25em;
 
 $grid-item-minWidth: 300px;
 
+.app__content {
+
+  &.is-ie {
+    display: none;
+  }
+
+  @include target-ie {
+
+    &.is-ie {
+      display: block;
+    }
+
+    &.is-not-ie {
+      display: none;
+    }
+  }
+}
 
 /* Container */
 .container {

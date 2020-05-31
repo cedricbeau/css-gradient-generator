@@ -21,95 +21,116 @@
 
 </head>
 <body>
-  <div class="content">
-    <link rel="stylesheet" href="css/choices.min.css">
-    <form action="#" id="theGradientForm">
-      <div class="form-fieldset container">
-        <div class="form-grid grid">
-          <div class="form-field" id="theCheckField">
-            <input type="radio" name="gradient-type" value="linear-gradient" class="check-radio" id="theLinear" checked>
-            <label for="theLinear">linear</label>
-            <input type="radio" name="gradient-type" value="radial-gradient" class="check-radio" id="theRadial">
-            <label for="theRadial">radial</label>
+  <div id="app">
+    <div class="app__content is-ie">
+      <header class="content__header">
+        <h1>Votre navigateur n'est pas supporté</h1>
+      </header>
+    </div>
+    <div class="app__content is-not-ie">
+      <div class="content">
+        <link rel="stylesheet" href="css/choices.min.css">
+        <form action="#" id="theGradientForm">
+          <div class="form-fieldset container">
+            <div class="form-grid grid">
+              <div class="form-field" id="theCheckField">
+                <input type="radio"
+                       name="gradient-type"
+                       value="linear-gradient"
+                       class="check-radio"
+                       id="theLinear"
+                       onclick="gradientTool._checkTypeGradient(event)"
+                       checked>
+                <label for="theLinear">linear</label>
+                <input type="radio"
+                       name="gradient-type"
+                       value="radial-gradient"
+                       class="check-radio"
+                       id="theRadial"
+                       onclick="gradientTool._checkTypeGradient(event)">
+                <label for="theRadial">radial</label>
+              </div>
+              <div class="form-field" id="theLinearField">
+                <select id="theLinearDirection" class="gradient-value" onchange="gradientTool._changeValue()">
+                  <option value="to top" selected>to top</option>
+                  <option value="to top left">to top left</option>
+                  <option value="to top right">to top right</option>
+                  <option value="to left">to left</option>
+                  <option value="to right">to right</option>
+                  <option value="to bottom">to bottom</option>
+                  <option value="to bottom left">to bottom left</option>
+                  <option value="to bottom right">to bottom right</option>
+                </select>
+              </div>
+              <div class="form-field " id="theRadialField">
+                <select id="theRadialDirection" class="gradient-value" onchange="gradientTool._changeValue()">
+                  <option value="circle" selected>circle</option>
+                  <option value="circle at top">circle at top</option>
+                  <option value="circle at bottom">circle at bottom</option>
+                  <option value="circle at left">circle at left</option>
+                  <option value="circle at right">circle at right</option>
+                  <option value="ellipse">ellipse</option>
+                  <option value="ellipse at top">ellipse at top</option>
+                  <option value="ellipse at bottom">ellipse at bottom</option>
+                  <option value="ellipse at left">ellipse at left</option>
+                  <option value="ellipse at right">ellipse at right</option>
+                  <option value="closest-side">closest-side</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <input type="color" id="theGradientColor1" class="gradient-value" onchange="gradientTool._changeValue()">
+              </div>
+              <div class="form-field">
+                <input type="color" id="theGradientColor2" class="gradient-value" onchange="gradientTool._changeValue()">
+              </div>
+            </div>
           </div>
-          <div class="form-field" id="theLinearField">
-            <select id="theLinearDirection" class="gradient-value" onchange="changeValue()">
-              <option value="to top" selected>to top</option>
-              <option value="to top left">to top left</option>
-              <option value="to top right">to top right</option>
-              <option value="to left">to left</option>
-              <option value="to right">to right</option>
-              <option value="to bottom">to bottom</option>
-              <option value="to bottom left">to bottom left</option>
-              <option value="to bottom right">to bottom right</option>
-            </select>
-          </div>
-          <div class="form-field " id="theRadialField">
-            <select id="theRadialDirection" class="gradient-value" onchange="changeValue()">
-              <option value="circle" selected>circle</option>
-              <option value="circle at top">circle at top</option>
-              <option value="circle at bottom">circle at bottom</option>
-              <option value="circle at left">circle at left</option>
-              <option value="circle at right">circle at right</option>
-              <option value="ellipse">ellipse</option>
-              <option value="ellipse at top">ellipse at top</option>
-              <option value="ellipse at bottom">ellipse at bottom</option>
-              <option value="ellipse at left">ellipse at left</option>
-              <option value="ellipse at right">ellipse at right</option>
-              <option value="closest-side">closest-side</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <input type="color" id="theGradientColor1" class="gradient-value" onchange="changeValue()">
-          </div>
-          <div class="form-field">
-            <input type="color" id="theGradientColor2" class="gradient-value" onchange="changeValue()">
+        </form>
+        <!-- Form: End -->
+        <link rel="stylesheet" href="css/result.min.css">
+        <div class="resultat">
+          <div id="theGradientResult" class="color-result"></div>
+          <div class="info-result">
+            <div class="info-result-inner container">
+              <div class="text-result"></div>
+              <div class="add-to-container">
+                <button type="button" id="addToCollection" class="btn btn-light" onclick="gradientTool._validate(event)">
+                  <span class="icon-plus"></span>Ajouter à ma collection
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
-    <!-- Form: End -->
-    <link rel="stylesheet" href="css/result.min.css">
-    <div class="resultat">
-      <div id="theGradientResult" class="color-result"></div>
-      <div class="info-result">
-        <div class="info-result-inner container">
-          <div class="text-result"></div>
-          <div class="add-to-container">
-            <button type="button" id="addToCollection" class="btn btn-light" onclick="validate(event)">
-              <span class="icon-plus"></span>Ajouter à ma collection
+        <!-- Resultat: End -->
+        <link rel="stylesheet" href="css/collections.min.css">
+        <div id="collection" class="container">
+          <div class="collection-header">
+            <h2>Ma collection</h2>
+            <button type="button" id="clearMyCollection" class="btn btn-danger">
+              <span class="icon-bin"></span>Supprimer ma collection
             </button>
           </div>
+          <div id="myCollection" class="grid"></div>
         </div>
+        <!-- Collection: End -->
+        <link rel="stylesheet" href="css/foot.min.css">
+        <footer class="container">
+          <div class="me">
+            <script type="text/javascript">document.write(new Date().getFullYear());</script>
+            - <span class="icon-embed2"></span> avec <span class="icon-heart"></span> par <a href="https://cedricbeau.pro/" title="cedricbeau.pro">Cédric Beau</a>
+          </div>
+          <div class="github">
+            <a href="https://github.com/cedricbeau/css-gradient-generator">
+              <span class="icon-github"></span>
+            </a>
+          </div>
+        </footer>
+        <!-- Footer: End -->
       </div>
+      <!-- Content: End -->
     </div>
-    <!-- Resultat: End -->
-    <link rel="stylesheet" href="css/collections.min.css">
-    <div id="collection" class="container">
-      <div class="collection-header">
-        <h2>Ma collection</h2>
-        <button type="button" id="clearMyCollection" class="btn btn-danger">
-          <span class="icon-bin"></span>Supprimer ma collection
-        </button>
-      </div>
-      <div id="myCollection" class="grid"></div>
-    </div>
-    <!-- Collection: End -->
-    <link rel="stylesheet" href="css/foot.min.css">
-    <footer class="container">
-      <div class="me">
-        <script type="text/javascript">document.write(new Date().getFullYear());</script>
-        - <span class="icon-embed2"></span> avec <span class="icon-heart"></span> par <a href="https://cedricbeau.pro/" title="cedricbeau.pro">Cédric Beau</a>
-      </div>
-      <div class="github">
-        <a href="https://github.com/cedricbeau/css-gradient-generator">
-          <span class="icon-github"></span>
-        </a>
-      </div>
-    </footer>
-    <!-- Footer: End -->
   </div>
-  <!-- Content: End -->
+
   <script>
     //This is the "Offline page" service worker
     if ('serviceWorker' in navigator) {
