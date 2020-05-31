@@ -4,7 +4,7 @@ $resultat-width: 100%;
 $resultat-height: 20em;
 $white: #fff;
 $dark: #333;
-$text-resultat-minWidth: 18.75em;
+
 $text-resultat-padding: 0.625em .875em;
 $border: 1px solid #e5e5e5;
 $border-radius: .25em;
@@ -16,19 +16,22 @@ $border-radius: .25em;
 }
 
 .info-result {
-  padding: 1em 0;
+  padding: 1.25em 0;
   background: $white;
   border-top: $border;
   border-bottom: $border;
 }
 
 .text-result {
-  min-width: $text-resultat-minWidth;
-  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 5rem;
   padding: $text-resultat-padding;
-  color: $white;
-  background-color: $dark;
+  background-color: #f2f2f2;
   border-radius: $border-radius;
+  border: 1px solid #e5e5e5;
+  color: $dark;
 }
 
 .add-to-container {
@@ -36,21 +39,9 @@ $border-radius: .25em;
   text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
-  .info-result-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .add-to-container {
-    margin-top: 0;
-    text-align: right;
-  }
-}
-
 #addToCollection {
   width: 100%;
+  margin: 0 auto;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .3s
 }

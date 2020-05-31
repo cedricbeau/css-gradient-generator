@@ -20,6 +20,10 @@ $box-shadow: 0px 0px 20px rgba(00,00,00,.15);
   margin: $collection-margin-s;
 }
 
+#collection {
+  flex: 1;
+}
+
 .collection-header {
   display: flex;
   justify-content: space-between;
@@ -28,6 +32,7 @@ $box-shadow: 0px 0px 20px rgba(00,00,00,.15);
   h2 {
     position: relative;
     margin: 0;
+    line-height: 1;
     color: $grey;
 
     &::before {

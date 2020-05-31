@@ -190,7 +190,7 @@ var gradientTool = {
 
     this.myCollection.appendChild(newItem)
 
-    this.clearMyCollection.style.display = 'inline-block'
+    this.clearMyCollection.style.display = 'flex'
 
     this._storeCollection()
   },
@@ -213,7 +213,7 @@ var gradientTool = {
       return
     } else {
       this.myCollection.innerHTML = storedCollection
-      this.clearMyCollection.style.display = 'inline-block'
+      this.clearMyCollection.style.display = 'flex'
     }
   },
 
