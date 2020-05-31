@@ -19,6 +19,7 @@ Ne fonctionne ni sur Safari ni sur IE11, ces navigateurs ne prenant pas en charg
 **31/05/2020**
 
 * Detection CSS de IE
+* Refactorisation du JS
 
 **30/05/2020**
 
